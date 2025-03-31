@@ -1,42 +1,46 @@
-import Carousel from 'react-bootstrap/Carousel';
-import img1 from "../Images/photo4.jpg";
+import Carousel from "react-bootstrap/Carousel";
+import img1 from "../Images/photo7.jpg";
 import img2 from "../Images/photo8.png";
-import img3 from "../Images/photo6.jpg";
-import "../css/home.css"
+import img3 from "../Images/photo2.jpg";
+import "../css/home.css";
 
-const Home = ()=> {
-    return(
-        <>
-        <div id="slider">
-            <Carousel>
-      <Carousel.Item>
-        <img src={img1} alt="" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img src={img2} alt=""   />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img src={img3} alt="" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+const Home = () => {
+  return (
+    <>
+      <div id="slider">
+        <Carousel>
+          <Carousel.Item>
+            <img src={img1} alt="" />
+            <Carousel.Caption>
+              <h3>First slide demo</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={img2} alt="" />
+            <Carousel.Caption>
+              <h3>Second slide demo</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={img3} alt="" />
+            <Carousel.Caption>
+              <h3>Third slide demo</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </div>
+       <div id="video">
+    <video src="video.mp4" type="video/mp4" autoplay muted controls></video>
     </div>
 
-        </>
-    )
-}
+      
+    </>
+  );
+};
 
 export default Home;

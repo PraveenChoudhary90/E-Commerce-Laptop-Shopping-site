@@ -1,5 +1,65 @@
 #footer{
     display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    background-color:black;
+    color: white;
+    padding: 60px;
+    
+}
+#para2{
+    display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
+    padding-right: 60px;
+    gap: 20px;
 }
+#para3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    border-radius: 30px;
+    padding: 20px;
+    gap: 30px;
+    width: 300px;
+   
+}
+
+#footer h1{
+    font-size: 25px;
+}
+#footer p{
+    width: 550px;
+    font-size: 20px;
+}
+#para4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#footer2 h1{
+    padding: 7px;
+    cursor: pointer;
+}
+
+#footer h1:hover{
+    color:red; 
+}
+#footer p:hover{
+    color:blue; 
+}
+
+#footdata{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-color: black;
+}
+
