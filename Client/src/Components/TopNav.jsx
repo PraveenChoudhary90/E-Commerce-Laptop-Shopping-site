@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const TopNav = ()=>{
     return(
         <>
-          <Navbar bg="dark" data-bs-theme="dark">
+          <Navbar bg="light" data-bs-theme="light">
         <Container>
           <Navbar.Brand as={Link}  to="home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
@@ -13,6 +13,9 @@ const TopNav = ()=>{
             <Nav.Link  as={Link}  to="features">Features</Nav.Link>
             <Nav.Link  as={Link}   to="pricing">Pricing</Nav.Link>
           </Nav>
+        </Container>
+        <Container>
+          <input type='text' placeholder='Search Product' style={{padding:"10px",fontSize:"20px" ,textAlign:"center", borderRadius:"30px", width:"300px", border:"1px solid black" }}/>
         </Container>
       </Navbar>
         </>
