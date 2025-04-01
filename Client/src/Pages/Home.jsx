@@ -2,6 +2,7 @@ import Carousel from "react-bootstrap/Carousel";
 import img1 from "../Images/photo7.jpg";
 import img2 from "../Images/photo8.png";
 import img3 from "../Images/photo2.jpg";
+import img4 from "../Images/Phono.png";
 import "../css/home.css";
 
 const Home = () => {
@@ -36,6 +37,14 @@ const Home = () => {
       </div>
        <div id="video">
     <video src="video.mp4" type="video/mp4" autoplay muted controls></video>
+    </div>
+
+    <div id="phono">
+      <img src={img4} alt="" />
+      <h1>Online Laptop Store and Laptop Shop Zone Theme</h1>
+        <button>View Demo</button>
+      {/* <button>Purchase Theme</button> */}
+      
     </div>
 
       

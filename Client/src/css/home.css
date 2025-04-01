@@ -14,3 +14,29 @@
     margin: 50px;
     padding-left: 50px;
 }
+
+#phono{
+    padding-left: 80px;
+    padding-top: 40px;
+    padding-bottom: 90px;
+    background-color: white;
+}
+#phono h1{
+    text-align: center;
+    padding-top: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 60px;
+}
+#phono button{
+    background-color: black;
+    color: white;
+    font-size: 23px;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 15px;
+    text-transform:initial;
+    margin-left: 550px;
+    text-align: center;
+    gap: 20px;
+    
+}
