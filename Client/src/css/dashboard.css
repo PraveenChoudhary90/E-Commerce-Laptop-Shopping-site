@@ -1,0 +1,17 @@
+#admindashboard{
+    padding: 20px;
+    text-align: center;
+    background-color: lightcyan;
+}
+
+#data1{
+    text-align: center;
+    background-color: lightskyblue;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+#data2{
+    text-align: right;
+    
+}
