@@ -83,11 +83,14 @@ const Footer = () => {
         <h6>Copyright © 2025 Phono Lappy Zone By Evonicmedia. All Rights Reserved.</h6>
         <h4>_____________________________</h4>
         <h6>Payment Accepted</h6>
-        <img src={img3} alt="" />
+        <div id="upi">
+          <img src={img3} alt="" />
         <img src={img4} alt="" />
         <img src={img5} alt="" />
         <img src={img6} alt="" />
         <img src={img7} alt="" />
+        </div>
+       
         
       </div>
     </>

@@ -1,0 +1,25 @@
+
+
+#about{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#aboutdata{
+    padding: 20px;
+    font-size: 20px;
+}
+#aboutdata button{
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 15px;
+    padding-left: 20px;
+}
+
+#aboutdata  button:hover{
+    background-color: black;
+    color: white;
+}

@@ -36,8 +36,12 @@ const Home = () => {
         </Carousel>
       </div>
        <div id="video">
-    <video src="video.mp4" type="video/mp4" autoplay muted controls></video>
+    <video src="video.mp4" type="video/mp4" autoplay muted  controls loop ></video>
+    {/* <video autoplay muted controls loop >
+  <source src="video.mp4" type="video/mp4"/>
+</video> */}
     </div>
+    
 
     <div id="phono">
       <img src={img4} alt="" />
