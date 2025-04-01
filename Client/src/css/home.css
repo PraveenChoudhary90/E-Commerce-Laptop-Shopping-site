@@ -40,3 +40,6 @@
     gap: 20px;
     
 }
+#phono button:hover{
+    background-color: red;
+}
