@@ -3,25 +3,17 @@ const app= express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors= require("cors");
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded())
-// parse application/json
-app.use(bodyParser.json())
-app.use(cors());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
-mongoose.connect(process.env.DBCON).then(()=>{
-    console.log("DB Succefully Connected!!!");
-})
 require("dotenv").config();
+const path = require('path');
+app.use(cors());
 const AdminRoute = require("./Routes/AdminRoute");
 
 
-
+app.use(cors());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded())
 // parse application/json
 app.use(bodyParser.json())
-app.use(cors());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 mongoose.connect(process.env.DB_STRING).then(()=>{
     console.log("DB IS CONNECTED SUCCESSFULLY!!!");

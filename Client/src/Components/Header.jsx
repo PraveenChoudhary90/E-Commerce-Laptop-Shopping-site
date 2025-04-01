@@ -9,10 +9,11 @@ import "../css/header.css"
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-// import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import BASE_URL from "../Config/Config";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 const Header = ()=>{
 
   const [show, setShow] = useState(false);
@@ -21,6 +22,7 @@ const Header = ()=>{
   const handleShow = () => setShow(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
 
     const handelSubmit = async(e)=>{
@@ -29,13 +31,14 @@ const Header = ()=>{
       try {
         const response = await axios.post(api,{email:email, password:password})
         console.log(response.data);
-        alert("your are Login")
-        localStorage.setItem("adminname", response.data.name);
-        localStorage.setItem("adminemail", response.data.email);
-        localStorage.setItem("adminid", response.data.id);
-        Navigate("/dashboard");
+        localStorage.setItem("adminname", response.data.Admin.name);
+        toast.success(response.data.msg);
+        alert(response.data.msg);
+        navigate("/dashboard");
+        setShow(false);
       } catch (error) {
-        console.log(error);
+        toast.error(error.response.data.msg);
+        alert(error.response.data.msg);
         
       }
     }
@@ -69,6 +72,7 @@ const Header = ()=>{
         <Modal.Body>
          
            <Form>
+           
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Enter Email Address</Form.Label>
         <Form.Control type="text" placeholder="Enter email address" name="email" value={email} onChange={(e)=>{
@@ -79,25 +83,16 @@ const Header = ()=>{
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Enter Password</Form.Label>
         <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={(e)=>{
-          setPassword(e.target.password);
+          setPassword(e.target.value);
         }} />
       </Form.Group>
       <Button variant="primary" type="submit" onClick={handelSubmit}>
         Submit
       </Button>
     </Form>
-
-
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
+      <ToastContainer />
         </>
     )
 }
