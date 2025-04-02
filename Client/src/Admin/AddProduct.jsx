@@ -38,7 +38,7 @@ const AddProduct=()=>{
             const response = await axios.post(api, formData, {
               headers: { 'Content-Type': 'multipart/form-data' },
             });
-             alert("file upload!!!");
+             alert("Product is Uploaded Successfully!!!");
           } catch (error) {
              console.log(error)
           }
@@ -48,21 +48,20 @@ const AddProduct=()=>{
     return(
         <>
           <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmaila">
         <Form.Label>Product name</Form.Label>
         <Form.Control type="text"  name="name" onChange={handleInput} />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmailb">
         <Form.Label>Description</Form.Label>
         <Form.Control type="text"   name="description" onChange={handleInput} />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmailc">
         <Form.Label>Model Name</Form.Label>
         <Form.Control type="text" name="model" onChange={handleInput}  />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmaild">
         <Form.Label>Brand</Form.Label>
-       
         <Form.Select aria-label="Default select example" name="brand"
         onChange={handleInput}>
       <option>Select Brand </option>
@@ -73,9 +72,8 @@ const AddProduct=()=>{
     </Form.Select>
       </Form.Group>
       
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmaile">
         <Form.Label>Product Screen Size</Form.Label>
-       
         <Form.Select aria-label="Default select example" name="size"
         onChange={handleInput}>
       <option>Select Screen Size </option>
@@ -86,27 +84,27 @@ const AddProduct=()=>{
     </Form.Select>
       </Form.Group>
       
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmailf">
         <Form.Label>Product Price</Form.Label>
         <Form.Control type="text" name="price" onChange={handleInput}  />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmailg">
         <Form.Label>Operating System</Form.Label>
         <Form.Control type="text" name="system" onChange={handleInput}  />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmailg">
         <Form.Label> Product Ram</Form.Label>
         <Form.Control type="text" name="ram" onChange={handleInput}  />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmailh">
         <Form.Label>Hard Disk</Form.Label>
         <Form.Control type="text" name="harddisk" onChange={handleInput}  />
       </Form.Group>
      
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicEmailm">
         <Form.Label>Upload Image</Form.Label>
         <Form.Control type="file"  multiple  onChange={handleImage}  />
       </Form.Group>
