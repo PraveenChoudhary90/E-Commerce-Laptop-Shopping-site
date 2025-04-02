@@ -38,7 +38,8 @@ const AddProduct=()=>{
             const response = await axios.post(api, formData, {
               headers: { 'Content-Type': 'multipart/form-data' },
             });
-             alert("Product is Uploaded Successfully!!!");
+            alert(response.data.msg);
+            //  alert("Product is Uploaded Successfully!!!");
           } catch (error) {
              console.log(error)
           }
@@ -68,7 +69,7 @@ const AddProduct=()=>{
       <option value="HP">HP</option>
       <option value="DELL">DELL</option>
       <option value="APPLE">APPLE</option>
-      <option value="LENOVO">LENOVO</option>
+      <option value="LENOVO">LENEVO</option>
     </Form.Select>
       </Form.Group>
       
