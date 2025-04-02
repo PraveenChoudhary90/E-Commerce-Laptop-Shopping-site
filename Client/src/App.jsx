@@ -7,6 +7,7 @@ import Home from "./Pages/Home"
 import About from "./Pages/About"
 import Registration from "./Pages/Registration"
 import Dashboard from "./Admin/AdminDhashboard"
+import AddProduct from "./Admin/AddProduct"
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
      </Routes>
      <Routes>
       <Route path="dashboard" element={<Dashboard/>}>
-      
+      <Route path="addproduct" element={<AddProduct/>}/>
       </Route>
      </Routes>
      </BrowserRouter>

@@ -23,18 +23,18 @@
     border: 1px solid black;
     color: black;
     border-radius: 30px;
-    padding: 20px;
+    padding: 18px;
     gap: 30px;
-    width: 300px;
+    width: 280px;
    
 }
 
 #footer h1{
-    font-size: 25px;
+    font-size: 18px;
 }
 #footer p{
     width: 550px;
-    font-size: 20px;
+    font-size: 15px;
 }
 #para4{
     display: flex;
