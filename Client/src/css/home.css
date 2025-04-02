@@ -43,3 +43,11 @@
 #phono button:hover{
     background-color: red;
 }
+
+
+#cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    margin: 90px;
+    gap: 30px;
+}
