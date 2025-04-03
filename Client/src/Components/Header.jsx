@@ -6,7 +6,7 @@ import { MdLocalGroceryStore } from "react-icons/md";
 import { FaCircleUser } from "react-icons/fa6";
 import img1 from "../Images/logo1.png";
 import "../css/header.css"
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -15,14 +15,37 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useSelector } from 'react-redux';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { MyContext } from '../LoginContext';
 const Header = ()=>{
 
   const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+   const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+ const [cusemail, setCusEmail] = useState("");
+  const [cuspassword, setCusPassword] = useState("");
+
+  
+
+
+   const {logedIn, setLogedIn, uname, uemail, setUname, setUemail} = useContext(MyContext);
+
+
+
+
+
+
+
+
+
   const navigate = useNavigate();
   const Product= useSelector(state=>state.mycart.cart);
    const ProLength= Product.length;
@@ -48,6 +71,43 @@ const Header = ()=>{
 
 
 
+    
+
+    const CustomerSubmit = async(e)=>{
+      e.preventDefault();
+
+      const api = `${BASE_URL}/customer/CustomerLogin`;
+      try {
+        const response = await axios.post(api, {email:cusemail, password:cuspassword});
+        console.log(response.data);
+         localStorage.setItem("token", response.data.token);
+        alert("you are login")
+        setShow1(false);
+          setLogedIn(true)
+        navigate("/");
+      } catch (error) {
+        alert(error.response.data.msg);
+        
+      }
+
+
+      
+    }
+
+
+
+
+    const logout=()=>{
+   localStorage.clear();
+   setUname("")
+   setUemail("");
+   setLogedIn(false);
+   navigate("/");  
+}
+
+
+
+
     return(
         <>
         <div id="header">
@@ -58,11 +118,27 @@ const Header = ()=>{
             <div id="icons">
              <FaSearch />
              <FaHeart />
-             <FaUser />
+             <FaUser onClick={handleShow1} />
             <span style={{fontSize:"30px"}}> <MdLocalGroceryStore onClick={()=>{navigate("/cartdata")}} />
             {ProLength}
             </span>
              <FaCircleUser onClick={handleShow} />
+             
+         <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+       user description
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">
+         Welcome : {uname}
+        </Dropdown.Item>
+        <Dropdown.Item href="#/action-2">
+        Email : {uemail}
+        </Dropdown.Item>
+        <Dropdown.Item href="#/action-3" onClick={logout}>logout</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
             </div>
              
         </div>
@@ -97,6 +173,42 @@ const Header = ()=>{
     </Form>
         </Modal.Body>
       </Modal>
+
+
+
+  {/* customer login */}
+        <Modal show={show1} onHide={handleClose1}>
+        <Modal.Header closeButton>
+          <Modal.Title>Customer Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+         
+           <Form>
+           
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Enter Email</Form.Label>
+        <Form.Control type="email"  name="email" value={cusemail} onChange={(e)=>{
+          setCusEmail(e.target.value);
+        }}/>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Enter Password</Form.Label>
+        <Form.Control type="password"  name="password" value={cuspassword} onChange={(e)=>{
+          setCusPassword(e.target.value);
+        }} />
+      </Form.Group>
+      <Button variant="primary" type="submit" onClick={CustomerSubmit}>
+        Submit
+      </Button>
+    </Form>
+        </Modal.Body>
+      </Modal>
+
+
+
+
+
       <ToastContainer />
         </>
     )

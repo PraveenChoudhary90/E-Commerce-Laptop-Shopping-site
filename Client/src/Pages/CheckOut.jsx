@@ -1,15 +1,15 @@
 import { useEffect, useContext } from "react";
-// import { MyContext } from "../LoginContext";
+import { MyContext } from "../LoginContext";
 import { useNavigate } from "react-router-dom";
 const CheckOut=()=>{
-// const {logedIn} = useContext(MyContext);
+const {logedIn} = useContext(MyContext);
 const navigate= useNavigate();
-// useEffect(()=>{
-//   if (!logedIn)
-//   {
-//      navigate("/");
-//   }
-// }, []);
+useEffect(()=>{
+  if (!logedIn)
+  {
+     navigate("/");
+  }
+}, []);
 
 
 

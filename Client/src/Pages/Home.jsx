@@ -4,18 +4,21 @@ import img2 from "../Images/photo8.png";
 import img3 from "../Images/photo2.jpg";
 import img4 from "../Images/Phono.png";
 import "../css/home.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import BASE_URL from "../Config/Config";
 import axios from "axios";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { addtoCart } from "../cartSlice";
 import { useDispatch } from "react-redux";
+import { MyContext } from "../LoginContext";
 
 const Home = () => {
 
   const [mydata, setMydata] = useState([]);
    const dispatch= useDispatch();
+
+     const {logedIn, setUname, setUemail} = useContext(MyContext);
 
 const loadData = async()=>{
   const api = `${BASE_URL}/admin/showProduct`;
@@ -29,9 +32,47 @@ const loadData = async()=>{
   }
 }
 
+
+
+ const customerAunthenticate=async()=>{
+
+    const token=localStorage.getItem("token");
+     if (token)
+     {
+         let api=`${BASE_URL}customer/userauthenticate`;
+
+         const response =await axios.get(api, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+
+        console.log(response.data);
+        localStorage.setItem("username", response.data.name);
+        localStorage.setItem("useremail", response.data.email);
+        localStorage.setItem("userid", response.data._id);
+        setUname(localStorage.getItem("username"));
+        setUemail(localStorage.getItem("useremail"));
+     }
+   }
+
+
+
+
+
+
+
+
 useEffect(()=>{
   loadData();
+  customerAunthenticate();
 },[])
+
+
+
+  useEffect(()=>{
+    customerAunthenticate();
+  }, [logedIn])
+
+
 
 
 const ans = mydata.map((key)=>{
