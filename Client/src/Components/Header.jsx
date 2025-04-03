@@ -14,6 +14,7 @@ import BASE_URL from "../Config/Config";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useSelector } from 'react-redux';
 const Header = ()=>{
 
   const [show, setShow] = useState(false);
@@ -23,6 +24,8 @@ const Header = ()=>{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const Product= useSelector(state=>state.mycart.cart);
+   const ProLength= Product.length;
 
 
     const handelSubmit = async(e)=>{
@@ -56,7 +59,7 @@ const Header = ()=>{
              <FaSearch />
              <FaHeart />
              <FaUser />
-             <MdLocalGroceryStore  />
+             <span><MdLocalGroceryStore onClick={()=>{navigate("/cartdata")}} /> {ProLength}</span>
              <FaCircleUser onClick={handleShow} />
             </div>
              

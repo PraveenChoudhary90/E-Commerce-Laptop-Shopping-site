@@ -9,11 +9,13 @@ import BASE_URL from "../Config/Config";
 import axios from "axios";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import { addtoCart } from "../cartSlice";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
 
   const [mydata, setMydata] = useState([]);
+   const dispatch= useDispatch();
 
 const loadData = async()=>{
   const api = `${BASE_URL}/admin/showProduct`;
@@ -48,9 +50,11 @@ const ans = mydata.map((key)=>{
            <h6>System:{key.system}</h6>
            <h6>Ram:{key.ram}</h6>
            <h6>Harddisk:{key.harddisk}</h6>
-           <h6> Price : {key.price}</h6>
+           <h6 style={{color:"red"}}> Price : {key.price}</h6>
         </Card.Text>
-        <Button variant="primary" style={{marginLeft:"50px"}}>Add to Cart</Button>
+        <Button variant="primary" style={{marginLeft:"10px"}}  onClick={()=>{dispatch(addtoCart({id:key._id, name:key.name, description:key.description, brand:key.brand, 
+          model:key.model,ram:key.ram,system:key.system,size:key.size,harddisk:key.harddisk,
+           price:key.price, defaultImage:key.dfaultImage, images:key.images, qnty:1}))}}>Add to Cart</Button>
       </Card.Body>
     </Card>
     </>
