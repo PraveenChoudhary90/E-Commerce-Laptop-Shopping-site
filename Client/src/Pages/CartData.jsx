@@ -10,9 +10,9 @@ import { useSelector, useDispatch } from "react-redux";
 import BASE_URL from '../Config/Config';
 
 const CartData=()=>{
+    const navigate = useNavigate();
     const Product= useSelector(state=>state.mycart.cart);
     console.log(Product);
-    const navigate = useNavigate();
     const dispatch= useDispatch();
     let totalAmount=0;
     const ans=Product.map((key)=>{
@@ -43,7 +43,7 @@ const CartData=()=>{
                 </td>
                 <td>{key.price * key.qnty}</td>
                 <td>
-                    <a href="#" style={{fontSize:"25px"}}
+                    <a href="#" style={{fontSize:"25px", color:"red"}}
                     onClick={()=>{dispatch(productRemove({id:key.id}))}}>
                     <MdDelete/>
                     </a>
