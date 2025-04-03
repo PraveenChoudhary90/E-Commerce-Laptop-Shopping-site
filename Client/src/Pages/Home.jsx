@@ -39,7 +39,7 @@ const loadData = async()=>{
     const token=localStorage.getItem("token");
      if (token)
      {
-         let api=`${BASE_URL}customer/userauthenticate`;
+         let api=`${BASE_URL}/customer/userauthenticate`;
 
          const response =await axios.get(api, {
           headers: { Authorization: `Bearer ${token}` },

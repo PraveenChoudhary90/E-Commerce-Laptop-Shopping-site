@@ -81,9 +81,9 @@ const Header = ()=>{
         const response = await axios.post(api, {email:cusemail, password:cuspassword});
         console.log(response.data);
          localStorage.setItem("token", response.data.token);
-        alert("you are login")
         setShow1(false);
-          setLogedIn(true)
+        setLogedIn(true)
+        alert("you are login")
         navigate("/");
       } catch (error) {
         alert(error.response.data.msg);
@@ -126,7 +126,7 @@ const Header = ()=>{
              
          <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
-       user description
+       Customer Setting Board
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
