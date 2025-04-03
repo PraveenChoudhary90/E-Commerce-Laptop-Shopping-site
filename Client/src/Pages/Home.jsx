@@ -40,17 +40,17 @@ const ans = mydata.map((key)=>{
       <Card.Body>
         <Card.Title>{key.name}</Card.Title>
         <Card.Text>
-           <h4>{key.description}</h4>
-           <h4>Brand : {key.brand}</h4>
-           <h4>Model{key.model}</h4>
-           <h4>Size:{key.size}</h4>
-           <h4>Model:{key.model}</h4>
-           <h4>System:{key.system}</h4>
-           <h4>Ram:{key.ram}</h4>
-           <h4>Harddisk:{key.harddisk}</h4>
-           <h2> Price : {key.price}</h2>
+           <h6>{key.description}</h6>
+           <h6>Brand : {key.brand}</h6>
+           <h6>Model{key.model}</h6>
+           <h6>Size:{key.size}</h6>
+           <h6>Model:{key.model}</h6>
+           <h6>System:{key.system}</h6>
+           <h6>Ram:{key.ram}</h6>
+           <h6>Harddisk:{key.harddisk}</h6>
+           <h6> Price : {key.price}</h6>
         </Card.Text>
-        <Button variant="primary">Add to Cart</Button>
+        <Button variant="primary" style={{marginLeft:"50px"}}>Add to Cart</Button>
       </Card.Body>
     </Card>
     </>
