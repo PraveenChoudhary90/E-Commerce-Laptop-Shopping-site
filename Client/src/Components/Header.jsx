@@ -117,13 +117,16 @@ const Header = ()=>{
             </div>
             <div id="icons">
              <FaSearch />
-             <FaHeart />
              <FaUser onClick={handleShow1} />
-            <span style={{fontSize:"30px"}}> <MdLocalGroceryStore onClick={()=>{navigate("/cartdata")}} />
+             <FaHeart />
+             <FaCircleUser onClick={handleShow} />
+             </div>
+             <div id="lengdata">
+             <span style={{fontSize:"30px"}}>Store <MdLocalGroceryStore onClick={()=>{navigate("/cartdata")}} />
             {ProLength}
             </span>
-             <FaCircleUser onClick={handleShow} />
-             
+            </div>
+          <div id="login">   
          <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
        Customer Setting Board
