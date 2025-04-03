@@ -54,7 +54,7 @@ const ans = mydata.map((key)=>{
         </Card.Text>
         <Button variant="primary" style={{marginLeft:"10px"}}  onClick={()=>{dispatch(addtoCart({id:key._id, name:key.name, description:key.description, brand:key.brand, 
           model:key.model,ram:key.ram,system:key.system,size:key.size,harddisk:key.harddisk,
-           price:key.price, defaultImage:key.dfaultImage, images:key.images, qnty:1}))}}>Add to Cart</Button>
+           price:key.price, defaultImage:key.defaultImage, images:key.images, qnty:1}))}}>Add to Cart</Button>
       </Card.Body>
     </Card>
     </>
