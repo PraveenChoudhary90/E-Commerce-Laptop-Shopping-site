@@ -9,6 +9,7 @@ import Registration from "./Pages/Registration"
 import Dashboard from "./Admin/AdminDhashboard"
 import AddProduct from "./Admin/AddProduct"
 import CartData from "./Pages/CartData"
+import CheckOut from "./Pages/CheckOut"
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <Route path="about" element={<About/>}/>
       <Route path="registration" element={<Registration/>}/>
       <Route path="cartdata" element={<CartData/>}/>
+      <Route path="checkout" element={<CheckOut/>}/>
       </Route>
      </Routes>
      <Routes>

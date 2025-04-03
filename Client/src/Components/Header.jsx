@@ -59,7 +59,9 @@ const Header = ()=>{
              <FaSearch />
              <FaHeart />
              <FaUser />
-             <span><MdLocalGroceryStore onClick={()=>{navigate("/cartdata")}} /> {ProLength}</span>
+            <span style={{fontSize:"30px"}}> <MdLocalGroceryStore onClick={()=>{navigate("/cartdata")}} />
+            {ProLength}
+            </span>
              <FaCircleUser onClick={handleShow} />
             </div>
              
