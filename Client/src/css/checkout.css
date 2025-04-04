@@ -1,0 +1,33 @@
+#cusdata{
+    width: 350px;
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(25, 212, 212);
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 9px;
+}
+
+#table{
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 9px;
+
+}
+
+
+
+#cusdata Button{
+    text-align: center;
+    margin-left: 60px;
+    background-color: green;
+    padding: 12px;
+    border-radius: 30px;
+    width: 170px;
+}
