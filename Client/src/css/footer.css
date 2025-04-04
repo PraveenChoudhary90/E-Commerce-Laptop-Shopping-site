@@ -63,3 +63,84 @@
     background-color: black;
 }
 
+/* media query tablate view */
+@media screen and (max-width:768px){
+
+    #para2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 60px;
+    gap: 20px;
+}
+#para3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    border-radius: 30px;
+    padding: 18px;
+    gap: 30px;
+    width: 280px;
+   
+}
+#footer p{
+    width: 300px;
+    font-size: 15px;
+}
+
+}
+
+
+/* mobile view */
+@media screen and (max-width:425px) {
+
+#footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    background-color:black;
+    flex-direction: column;
+    color: white;
+    padding: 60px;
+    
+}
+
+
+    #para2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-right: 60px;
+    gap: 20px;
+}
+#para3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    border-radius: 30px;
+    padding: 18px;
+    gap: 30px;
+    width: 280px;
+   
+}
+#footer p{
+    width: 300px;
+    font-size: 15px;
+}
+
+#footer2{
+    text-align: center;
+    padding-left: 30px;
+}
+}

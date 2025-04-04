@@ -17,7 +17,7 @@ const TopNav = ()=>{
           </Nav>
         </Container>
         <Container>
-          <input type='text' placeholder='Search Product' style={{padding:"10px",fontSize:"20px" ,textAlign:"center", borderRadius:"30px", width:"300px", border:"1px solid black" }}/>
+          <input type='text' placeholder='Search Product' id='input' />
         </Container>
       </Navbar>
       </div>

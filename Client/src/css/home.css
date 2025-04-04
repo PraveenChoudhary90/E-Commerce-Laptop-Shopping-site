@@ -51,3 +51,146 @@
     margin: 90px;
     gap: 30px;
 }
+
+/* media query tablet view*/
+@media screen and (max-width: 768px){
+    *{
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    #slider img{
+    width: 100%;
+    height: 700px;
+     border: 1px solid black;
+    border-radius: 30px;
+
+}
+#slider{
+    margin: 40px;
+   
+}
+
+#video{
+   margin-right: 100px;
+}
+
+#phono{
+    padding-left: 80px;
+    padding-top: 40px;
+    padding-bottom: 90px;
+    background-color: white;
+}
+#phono img{
+    width: 600px;
+}
+#phono h1{
+    text-align: center;
+    padding-top: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    padding-right: 20px;
+}
+#phono button{
+    background-color: black;
+    color: white;
+    font-size: 23px;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 15px;
+    text-transform:initial;
+    margin-left: 190px;
+    text-align: center;
+    gap: 20px;
+    
+}
+#phono button:hover{
+    background-color: red;
+}
+
+
+#cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 30px;
+    gap: 30px;
+   
+}
+
+}
+
+/* mobile view */
+@media screen and (max-width:425px){
+    
+    *{
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    #slider img{
+    width: 100%;
+    height: 700px;
+     border: 1px solid black;
+    border-radius: 30px;
+
+}
+#slider{
+    margin: 40px;
+   
+}
+
+#video{
+   width: 400px;
+   margin: 40px;
+   padding: 40px;
+}
+
+#phono{
+    padding-left: 80px;
+    padding-top: 40px;
+    padding-bottom: 90px;
+    background-color: white;
+}
+#phono img{
+    width: 350px;
+}
+#phono h1{
+    text-align: center;
+    padding-top: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    padding-right: 20px;
+}
+#phono button{
+    background-color: black;
+    color: white;
+    font-size: 23px;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 15px;
+    text-transform:initial;
+    margin-left: 100px;
+    text-align: center;
+    gap: 20px;
+    
+}
+#phono button:hover{
+    background-color: red;
+}
+
+
+#cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 30px;
+    gap: 30px;
+    padding-left: 30px;
+   
+}
+
+  
+}

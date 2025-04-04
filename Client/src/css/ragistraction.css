@@ -1,0 +1,21 @@
+#from1{
+    width: 500px;
+    margin: auto;
+}
+@media screen and (max-width:768px){
+    #from1{
+     padding-top: 200px;
+    width: 500px;
+    margin: auto;
+}
+    
+}
+
+@media screen and (max-width:425px){
+    #from1{
+     padding-top: 300px;
+    width: 300px;
+    margin: auto;
+}
+    
+}

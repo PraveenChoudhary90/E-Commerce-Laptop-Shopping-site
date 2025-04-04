@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import axios from 'axios';
 import BASE_URL from "../Config/Config";
+import "../css/ragistraction.css";
 
 const Registration = ()=>{
 
@@ -32,9 +33,9 @@ const Registration = ()=>{
 
     return(
         <>
+        <div id="from1">
                  <h1 align="center"> User Registration</h1>
-          <div style={{width:"300px", margin:"auto"}}>
-          <Form style={{width:"300px"}}>
+          <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Enter name </Form.Label>
         <Form.Control type="text" name="name" onChange={handleInput} />
@@ -63,8 +64,8 @@ const Registration = ()=>{
         Submit
       </Button>
     </Form>
-    <br /> <br/>
     </div>
+    <br /> <br/>
             <div id="phono">
               <img src={img4} alt="" />
               <h1>Online Laptop Store and Laptop Shop Zone Theme</h1>
