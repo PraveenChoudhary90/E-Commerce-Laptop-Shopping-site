@@ -1,0 +1,22 @@
+
+
+/* tablet view */
+@media screen and (max-width:768px) {
+    #cartone{
+   padding-top: 200px;
+   overflow-x: scroll;
+   overflow-y: scroll;
+    
+}
+    
+}
+
+/* view view */
+@media screen and (max-width:425px) {
+    #cartone{
+   padding-top: 350px;
+ 
+    
+}
+    
+}

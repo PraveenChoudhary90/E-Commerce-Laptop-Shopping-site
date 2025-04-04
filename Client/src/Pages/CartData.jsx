@@ -8,6 +8,7 @@ import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import BASE_URL from '../Config/Config';
+import "../css/CartData.css";
 
 const CartData=()=>{
     const navigate = useNavigate();
@@ -55,6 +56,7 @@ const CartData=()=>{
     })
  return(
         <>
+        <div id="cartone">
           <h1 align="center"> My Cart </h1>
         <h4 align="center" style={{color:"green", fontWeight:"bold"}}>
         < HiDocumentCurrencyRupee /> : {totalAmount}</h4> 
@@ -84,6 +86,7 @@ const CartData=()=>{
          {ans}
         </tbody>
         </Table>
+        </div>
 
         </>
     )
