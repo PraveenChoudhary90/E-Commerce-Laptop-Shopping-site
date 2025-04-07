@@ -53,6 +53,7 @@
     grid-template-columns: 1fr 1fr 1fr ;
     margin: 90px;
     gap: 30px;
+    /* transform: scale(); */
 }
 
 /* media query tablet view*/
