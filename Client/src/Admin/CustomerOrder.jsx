@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import BASE_URL from "../Config/Config";
 import Table from 'react-bootstrap/Table';
+import "../css/Customerorder.css";
 const CustomerOrder=()=>{
 const [mydata, setMydata]= useState([]);
 const loadData=async()=>{
@@ -39,6 +40,7 @@ const ans=mydata.map((key)=>{
 
     return(
         <>
+        <div id="table">
          <h1> Customer Orders</h1>
          <Table striped bordered hover>
       <thead>
@@ -56,6 +58,7 @@ const ans=mydata.map((key)=>{
         {ans}
         </tbody>
      </Table>
+     </div>
         </>
     )
 }

@@ -58,7 +58,7 @@ const ShowProduct = async(req,res)=>{
 }
 
 
-const getOrder=async(req, res)=>{
+const GetCustomerOrder=async(req, res)=>{
     const Order= await OrderModel.find();
     res.status(200).send(Order);
 }
@@ -67,5 +67,5 @@ module.exports = {
     AdminLogin,
     Addproduct,
     ShowProduct,
-    getOrder
+    GetCustomerOrder
 }

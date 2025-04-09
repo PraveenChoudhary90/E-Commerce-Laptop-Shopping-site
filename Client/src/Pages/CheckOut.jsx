@@ -20,8 +20,15 @@ const navigate= useNavigate();
     console.log(Product);
     const dispatch= useDispatch();
     let totalAmount=0;
+    let productsName="";
+    let imgURL="";
+
+
+
     const ans=Product.map((key)=>{
         totalAmount+=key.price * key.qnty;
+         productsName+=key.name + ", ";
+        imgURL=`${BASE_URL}/${key.defaultImage}`;
         return(
             <>
                <tr>
@@ -86,7 +93,9 @@ useEffect(()=>{
 
  const initPay = (data) => {
       const options = {
-        key : "rzp_test_pzkHWxo3sRdVQW",
+        key : "rzp_test_oWLUkrVaoJLWU0",
+//         KEY_ID=rzp_test_oWLUkrVaoJLWU0
+// KEY_SECRET=IS47GEvXCWrpf7RMY02kIlXK
         amount: data.amount,
         currency: data.currency,
         name: productsName,
