@@ -8,6 +8,7 @@ const path = require('path');
 app.use(cors());
 const AdminRoute = require("./Routes/AdminRoute");
 const CustomerRoute = require("./Routes/CustomerRoute");
+const paymentRoute = require("./Routes/payment");
 
 
 app.use(cors());
@@ -23,6 +24,7 @@ mongoose.connect(process.env.DB_STRING).then(()=>{
 
 app.use("/admin", AdminRoute);
 app.use("/customer", CustomerRoute);
+app.use("/api/payment/",paymentRoute);
 
 const port = process.env.PORT || 8000;
 app.listen(port, ()=>{

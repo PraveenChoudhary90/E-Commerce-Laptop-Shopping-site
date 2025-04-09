@@ -9,6 +9,8 @@ import BASE_URL from '../Config/Config';
 import "../css/CartData.css";
 import axios from "axios";
 import "../css/checkout.css";
+import { cartEmpty } from "../cartSlice";
+
 
 const CheckOut=()=>{
 const {logedIn} = useContext(MyContext);
@@ -57,6 +59,17 @@ const loadData=async()=>{
 
 
 
+const [shoe,setShoe] = useState({
+  name: "Training Shoes",
+  creator: "Nike",
+  img: "https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  price: 500,
+});
+
+
+
+
+
 useEffect(()=>{
   if (!localStorage.getItem("userLogedin"))
   {
@@ -64,6 +77,57 @@ useEffect(()=>{
   }
   loadData();
 }, []);
+
+
+
+
+
+
+
+ const initPay = (data) => {
+      const options = {
+        key : "rzp_test_pzkHWxo3sRdVQW",
+        amount: data.amount,
+        currency: data.currency,
+        name: productsName,
+        description: "Test",
+        image:imgURL,
+        order_id: data.id,
+        handler: async (response) => {
+          try {
+            const verifyURL = "https://localhost:8000/api/payment/verify";
+            const {data} = await axios.post(verifyURL,response);
+          } catch(error) {
+            console.log(error);
+          }
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+      const rzp1 = new window.Razorpay(options);
+      rzp1.open();
+    };
+    
+
+
+
+    const handlePay = async () => {
+      try {
+        const orderURL = "http://localhost:8000/api/payment/orders";
+        const {data} = await axios.post(orderURL,{amount: totalAmount, customername:cusData.name, address:cusData.address, contact:cusData.contact, email:cusData.email, proname:productsName});
+        console.log(data);
+        initPay(data.data);
+
+        dispatch(cartEmpty());
+
+
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    
+    
 
 
     return(
@@ -105,7 +169,7 @@ useEffect(()=>{
           Email :  {cusData.email}
           <br/>
           <br/>
-           <Button > Pay Now!</Button>
+           <Button onClick={handlePay} > Pay Now!</Button>
            </div>
 
           

@@ -10,6 +10,7 @@ import Dashboard from "./Admin/AdminDhashboard"
 import AddProduct from "./Admin/AddProduct"
 import CartData from "./Pages/CartData"
 import CheckOut from "./Pages/CheckOut"
+import CustomerOrder from "./Admin/CustomerOrder"
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
      <Routes>
       <Route path="dashboard" element={<Dashboard/>}>
       <Route path="addproduct" element={<AddProduct/>}/>
+      <Route path="customerorder" element={<CustomerOrder/>}/>
       </Route>
      </Routes>
      </BrowserRouter>

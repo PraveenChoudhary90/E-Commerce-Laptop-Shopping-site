@@ -1,4 +1,5 @@
 const AdminModel = require("../Model/AdminModel");
+const OrderModel = require("../Model/OrderModel");
 const ProductModel = require("../Model/ProductModel")
 
 
@@ -56,8 +57,15 @@ const ShowProduct = async(req,res)=>{
     res.status(200).send(Product);
 }
 
+
+const getOrder=async(req, res)=>{
+    const Order= await OrderModel.find();
+    res.status(200).send(Order);
+}
+
 module.exports = {
     AdminLogin,
     Addproduct,
-    ShowProduct
+    ShowProduct,
+    getOrder
 }
