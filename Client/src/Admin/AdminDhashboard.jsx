@@ -24,7 +24,7 @@ const Dashboard = ()=>{
         <div id="navdata">
              <Button variant="primary">Dashboard</Button>
              <Button variant="primary" onClick={()=>{navigate("addproduct")}}>Add To Cart</Button>
-             <Button variant="primary"> Manage Product </Button>
+             <Button variant="primary" onClick={()=>{navigate("manageproduct")}}> Manage Product </Button>
              <Button variant="primary" onClick={()=>{navigate("customerorder")}}>Customer Order</Button>
              <Button variant="primary">Products</Button>
              <Button variant="primary">Seetings</Button>
