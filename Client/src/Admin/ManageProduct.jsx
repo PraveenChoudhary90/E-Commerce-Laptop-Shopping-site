@@ -1,14 +1,29 @@
 import { useEffect, useState } from "react";
 import "../css/manageProduct.css";
-import Button from "react-bootstrap/esm/Button";
 import Table from 'react-bootstrap/Table';
 import BASE_URL from "../Config/Config";
 import axios from "axios";
 import { MdDelete } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+
 
 const ManageProduct = ()=>{
       const [mydata, setMydata] = useState([]);
+      
+
+       const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+  const Handelupdate = (_id)=>{
+        handleShow(true);
+        console.log(_id);
+  }
 
       const loadData = async()=>{
   const api = `${BASE_URL}/admin/showProduct`;
@@ -38,7 +53,17 @@ const HandelDelete =async (id)=>{
     }
 }
 
+const handleInput = (e)=>{
 
+}
+
+const handleImage = (e)=>{
+
+}
+
+const handleSubmit = (e)=>{
+
+}
 
 const ans = mydata.map((key)=>{
   return(
@@ -57,7 +82,7 @@ const ans = mydata.map((key)=>{
            <th>{key.harddisk}</th>
            <th style={{color:"red"}}>{key.price}</th>
            <th style={{fontSize:"26px"}} onClick={()=>{HandelDelete(key._id)}}><MdDelete /></th>
-           <th style={{fontSize:"25px"}}><FaPen /></th>
+           <th style={{fontSize:"25px"}} onClick={()=>{Handelupdate(key._id)}}><FaPen /></th>
            </tr>
      
     </>
@@ -93,6 +118,79 @@ const ans = mydata.map((key)=>{
         </tbody>
         </Table>
         </div>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+             <Form>
+                  <Form.Group className="mb-3" controlId="formBasicEmaila">
+                    <Form.Label>Product name</Form.Label>
+                    <Form.Control type="text"  name="name" onChange={handleInput} />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicEmailb">
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control type="text"   name="description" onChange={handleInput} />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicEmailc">
+                    <Form.Label>Model Name</Form.Label>
+                    <Form.Control type="text" name="model" onChange={handleInput}  />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicEmaild">
+                    <Form.Label>Brand</Form.Label>
+                    <Form.Select aria-label="Default select example" name="brand"
+                    onChange={handleInput}>
+                  <option>Select Brand </option>
+                  <option value="HP">HP</option>
+                  <option value="DELL">DELL</option>
+                  <option value="APPLE">APPLE</option>
+                  <option value="LENOVO">LENEVO</option>
+                </Form.Select>
+                  </Form.Group>
+                  
+                  <Form.Group className="mb-3" controlId="formBasicEmaile">
+                    <Form.Label>Product Screen Size</Form.Label>
+                    <Form.Select aria-label="Default select example" name="size"
+                    onChange={handleInput}>
+                  <option>Select Screen Size </option>
+                  <option value="15.5 Inches">15.5 Inches</option>
+                  <option value="12.8 Inches">12.8 Inches</option>
+                  <option value="18.5 Inches">18.5 Inches</option>
+                  <option value="14 Inches">14 Inches</option>
+                </Form.Select>
+                  </Form.Group>
+                  
+                  <Form.Group className="mb-3" controlId="formBasicEmailf">
+                    <Form.Label>Product Price</Form.Label>
+                    <Form.Control type="text" name="price" onChange={handleInput}  />
+                  </Form.Group>
+            
+                  <Form.Group className="mb-3" controlId="formBasicEmailg">
+                    <Form.Label>Operating System</Form.Label>
+                    <Form.Control type="text" name="system" onChange={handleInput}  />
+                  </Form.Group>
+            
+                  <Form.Group className="mb-3" controlId="formBasicEmailg">
+                    <Form.Label> Product Ram</Form.Label>
+                    <Form.Control type="text" name="ram" onChange={handleInput}  />
+                  </Form.Group>
+            
+                  <Form.Group className="mb-3" controlId="formBasicEmailh">
+                    <Form.Label>Hard Disk</Form.Label>
+                    <Form.Control type="text" name="harddisk" onChange={handleInput}  />
+                  </Form.Group>
+                 
+                  <Form.Group className="mb-3" controlId="formBasicEmailm">
+                    <Form.Label>Upload Image</Form.Label>
+                    <Form.Control type="file"  multiple  onChange={handleImage}  />
+                  </Form.Group>
+                  <Button variant="primary" type="submit" onClick={handleSubmit}>
+                    Update Data
+                  </Button>
+                </Form>
+        </Modal.Body>
+      </Modal>
         </>
     )
 }
