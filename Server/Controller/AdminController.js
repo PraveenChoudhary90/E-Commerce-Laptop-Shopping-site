@@ -63,9 +63,25 @@ const GetCustomerOrder=async(req, res)=>{
     res.status(200).send(Order);
 }
 
+
+const DeleteDataProduct = async(req,res)=>{
+    const { id} = req.body;
+    try {
+        const Data = await ProductModel.findByIdAndDelete(id);
+    res.send({msg:"Product is Delete succefully"});  
+    } catch (error) {
+        console.log(error);
+        
+    }
+  
+}
+
+
+
 module.exports = {
     AdminLogin,
     Addproduct,
     ShowProduct,
-    GetCustomerOrder
+    GetCustomerOrder,
+    DeleteDataProduct
 }

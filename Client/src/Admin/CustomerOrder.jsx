@@ -41,7 +41,7 @@ const ans=mydata.map((key)=>{
     return(
         <>
         <div id="table1">
-         <h1> Customer Orders</h1>
+         <h1 style={{textAlign:"center"}}> Customer Orders</h1>
          <Table striped bordered hover>
       <thead>
         <tr>
