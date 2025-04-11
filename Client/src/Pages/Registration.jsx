@@ -6,6 +6,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import BASE_URL from "../Config/Config";
 import "../css/ragistraction.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const Registration = ()=>{
 
@@ -23,9 +24,9 @@ const Registration = ()=>{
       let api=`${BASE_URL}/customer/registration`;
       try {
           const response=await axios.post(api, input);
-          alert(response.data.msg);
+          toast.success(response.data.msg);
       } catch (error) {
-         console.log(error);
+         toast.error(error.response.data.msg);
       }
   }
 
@@ -73,6 +74,7 @@ const Registration = ()=>{
               {/* <button>Purchase Theme</button> */}
               
             </div>
+                  <ToastContainer />
         </>
     )
 }

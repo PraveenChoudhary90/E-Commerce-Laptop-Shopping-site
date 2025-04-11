@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import axios from 'axios';
 import BASE_URL from '../Config/Config';
+import { ToastContainer, toast } from "react-toastify";
+
 const AddProduct=()=>{
      const [input, setInput] = useState({});
      const [images, setImages]=useState("");
@@ -38,7 +40,7 @@ const AddProduct=()=>{
             const response = await axios.post(api, formData, {
               headers: { 'Content-Type': 'multipart/form-data' },
             });
-            alert(response.data.msg);
+            toast.success(response.data.msg);
             //  alert("Product is Uploaded Successfully!!!");
           } catch (error) {
              console.log(error)
@@ -113,6 +115,7 @@ const AddProduct=()=>{
         Submit
       </Button>
     </Form>
+          <ToastContainer />
         </>
     )
 }
