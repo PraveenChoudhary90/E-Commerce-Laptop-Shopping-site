@@ -8,10 +8,14 @@ import { FaPen } from "react-icons/fa";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { ToastContainer, toast } from "react-toastify";
+
 
 
 const ManageProduct = ()=>{
       const [mydata, setMydata] = useState([]);
+      const [input, setInput] = useState({});
+      const [images,setImages]=useState("");
       
 
        const [show, setShow] = useState(false);
@@ -38,6 +42,10 @@ const ManageProduct = ()=>{
 }
 
 
+  
+
+
+
 useEffect(()=>{
 loadData();
 },[])
@@ -47,21 +55,36 @@ const HandelDelete =async (id)=>{
     const api = `${BASE_URL}/admin/DeleteData`;
     try {
         const response = await axios.post(api,{id:id});
-        alert(response.data.msg);
+        toast.success(response.data.msg);
     } catch (error) {
         console.log(error);
     }
 }
 
 const handleInput = (e)=>{
+  const name = e.target.name;
+  const value = e.target.value;
+  setInput(values=>({...values, [name]:value}));
+  console.log(input);
 
 }
-
+console.log(input);
 const handleImage = (e)=>{
+  const files = e.target.files;
+  setImages(files);
+  console.log(images);
 
 }
 
-const handleSubmit = (e)=>{
+const handleupdateSubmit =async (e)=>{
+  e.preventDefault();
+  const api = `${BASE_URL}/admin/UpdateData`;
+  try {
+    const response =await axios.post(api, input, images);
+    toast.success(response.data.msg);
+  } catch (error) {
+    console.log(error);
+  }
 
 }
 
@@ -121,25 +144,25 @@ const ans = mydata.map((key)=>{
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Update Product Model</Modal.Title>
         </Modal.Header>
         <Modal.Body>
              <Form>
                   <Form.Group className="mb-3" controlId="formBasicEmaila">
                     <Form.Label>Product name</Form.Label>
-                    <Form.Control type="text"  name="name" onChange={handleInput} />
+                    <Form.Control type="text"  name="name" value={input.name} onChange={handleInput} />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicEmailb">
                     <Form.Label>Description</Form.Label>
-                    <Form.Control type="text"   name="description" onChange={handleInput} />
+                    <Form.Control type="text"   name="description" value={input.description} onChange={handleInput} />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicEmailc">
                     <Form.Label>Model Name</Form.Label>
-                    <Form.Control type="text" name="model" onChange={handleInput}  />
+                    <Form.Control type="text" name="model" value={input.model} onChange={handleInput}  />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicEmaild">
                     <Form.Label>Brand</Form.Label>
-                    <Form.Select aria-label="Default select example" name="brand"
+                    <Form.Select aria-label="Default select example" name="brand" value={input.brand}
                     onChange={handleInput}>
                   <option>Select Brand </option>
                   <option value="HP">HP</option>
@@ -151,7 +174,7 @@ const ans = mydata.map((key)=>{
                   
                   <Form.Group className="mb-3" controlId="formBasicEmaile">
                     <Form.Label>Product Screen Size</Form.Label>
-                    <Form.Select aria-label="Default select example" name="size"
+                    <Form.Select aria-label="Default select example" name="size" value={input.size}
                     onChange={handleInput}>
                   <option>Select Screen Size </option>
                   <option value="15.5 Inches">15.5 Inches</option>
@@ -161,36 +184,38 @@ const ans = mydata.map((key)=>{
                 </Form.Select>
                   </Form.Group>
                   
-                  <Form.Group className="mb-3" controlId="formBasicEmailf">
+                  <Form.Group className="mb-3" controlId="formBasicEmailf"> 
                     <Form.Label>Product Price</Form.Label>
-                    <Form.Control type="text" name="price" onChange={handleInput}  />
+                    <Form.Control type="text" name="price" value={input.price} onChange={handleInput}  />
                   </Form.Group>
             
                   <Form.Group className="mb-3" controlId="formBasicEmailg">
                     <Form.Label>Operating System</Form.Label>
-                    <Form.Control type="text" name="system" onChange={handleInput}  />
+                    <Form.Control type="text" name="system" value={input.system} onChange={handleInput}  />
                   </Form.Group>
             
                   <Form.Group className="mb-3" controlId="formBasicEmailg">
                     <Form.Label> Product Ram</Form.Label>
-                    <Form.Control type="text" name="ram" onChange={handleInput}  />
+                    <Form.Control type="text" name="ram" value={input.ram} onChange={handleInput}  />
                   </Form.Group>
             
                   <Form.Group className="mb-3" controlId="formBasicEmailh">
                     <Form.Label>Hard Disk</Form.Label>
-                    <Form.Control type="text" name="harddisk" onChange={handleInput}  />
+                    <Form.Control type="text" name="harddisk" value={input.harddisk} onChange={handleInput}  />
                   </Form.Group>
                  
                   <Form.Group className="mb-3" controlId="formBasicEmailm">
                     <Form.Label>Upload Image</Form.Label>
                     <Form.Control type="file"  multiple  onChange={handleImage}  />
                   </Form.Group>
-                  <Button variant="primary" type="submit" onClick={handleSubmit}>
+                  <Button variant="primary" type="submit" onClick={handleupdateSubmit}>
                     Update Data
                   </Button>
                 </Form>
         </Modal.Body>
       </Modal>
+
+      <ToastContainer />
         </>
     )
 }

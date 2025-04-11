@@ -78,10 +78,11 @@ const DeleteDataProduct = async(req,res)=>{
 
 
 
+
 module.exports = {
     AdminLogin,
     Addproduct,
     ShowProduct,
     GetCustomerOrder,
-    DeleteDataProduct
+    DeleteDataProduct,
 }

@@ -129,6 +129,7 @@ useEffect(()=>{
         initPay(data.data);
 
         dispatch(cartEmpty());
+        navigate("/");
 
 
       } catch (error) {
