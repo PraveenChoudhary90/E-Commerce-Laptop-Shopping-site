@@ -95,7 +95,7 @@ const ans = mydata.map((key)=>{
            <h6>Harddisk:{key.harddisk}</h6>
            <h6 style={{color:"red"}}> Price : {key.price}</h6>
         </Card.Text>
-        <Button variant="primary" style={{marginLeft:"10px"}}  onClick={()=>{dispatch(addtoCart({id:key._id, name:key.name, description:key.description, brand:key.brand, 
+        <Button variant="warning" style={{color:"black"}}  onClick={()=>{dispatch(addtoCart({id:key._id, name:key.name, description:key.description, brand:key.brand, 
           model:key.model,ram:key.ram,system:key.system,size:key.size,harddisk:key.harddisk,
            price:key.price, defaultImage:key.defaultImage, images:key.images, qnty:1}))}}>Add to Cart</Button>
       </Card.Body>
@@ -145,7 +145,7 @@ const ans = mydata.map((key)=>{
        <div id="video">
     {/* <video src="video.mp4" type="video/mp4" autoplay  loop  controls muted  ></video> */}
     <video autoplay loop muted playsinline controls>
-  <source src="myvideo.mp4" type="video/mp4"/>
+  <source src="video.mp4" type="video/mp4"/>
 </video>
 
 

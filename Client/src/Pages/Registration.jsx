@@ -34,6 +34,7 @@ const Registration = ()=>{
 
     return(
         <>
+        <div id="back">
         <div id="from1">
                  <h1 align="center"> User Registration</h1>
           <Form>
@@ -73,6 +74,7 @@ const Registration = ()=>{
                 <button>View Demo</button>
               {/* <button>Purchase Theme</button> */}
               
+            </div>
             </div>
                   <ToastContainer />
         </>

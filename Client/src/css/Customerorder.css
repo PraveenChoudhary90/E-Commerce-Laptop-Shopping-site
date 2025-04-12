@@ -1,6 +1,6 @@
 #table1{
     padding-bottom: 110px;
     width: 100%;
-    /* overflow-y: scroll;
-    height: auto; */
+    overflow-y: scroll;
+    /* height: auto; */
 }
