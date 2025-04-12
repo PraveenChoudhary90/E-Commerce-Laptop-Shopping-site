@@ -143,10 +143,15 @@ const ans = mydata.map((key)=>{
 
 
        <div id="video">
-    <video src="video.mp4" type="video/mp4" autoplay  loop  controls muted  ></video>
-    {/* <video autoplay muted controls loop >
-  <source src="video.mp4" type="video/mp4"/>
-</video> */}
+    {/* <video src="video.mp4" type="video/mp4" autoplay  loop  controls muted  ></video> */}
+    <video autoplay loop muted playsinline controls>
+  <source src="myvideo.mp4" type="video/mp4"/>
+</video>
+
+
+
+
+
     </div>
 
     
