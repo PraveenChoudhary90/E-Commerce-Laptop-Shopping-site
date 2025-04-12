@@ -122,7 +122,7 @@
 
 
 
-/* tablet view */
+/* mobile view */
 @media screen and (max-width:425px) {
 
     #admindashboard{
@@ -151,6 +151,7 @@
    display: grid;
    grid-template-columns: 1fr;
     background-color: lightgray;
+    
 }
 
 #navdata{
@@ -159,26 +160,23 @@
     justify-content: center;
     align-items: start;
     gap: 20px;
-    width: 400px;
+    width: 450px;
     padding-left: 20px;
     padding-top: 30px;
-    margin-bottom: 820px;
-    height: 100vh;
+    /* margin-top: 820px; */
+    /* height: 100vh; */
     
 
 }
 #navdata Button{
-    width: 200px;
+    width: 50%;
     margin: auto;
 }
 
 #navdata1{
-   margin-right: 90px;
-   /* margin-left: 50px; */
-   width: auto;
-   padding: 10px;
-   margin-bottom: 600px;
-   box-shadow: 0px 0px 9px;
+   margin-bottom: 100px;
+   
+   
    
 }
 }
