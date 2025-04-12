@@ -12,6 +12,7 @@ import CartData from "./Pages/CartData"
 import CheckOut from "./Pages/CheckOut"
 import CustomerOrder from "./Admin/CustomerOrder"
 import ManageProduct from "./Admin/ManageProduct"
+import Profile from "./Admin/Profile"
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
       <Route path="addproduct" element={<AddProduct/>}/>
       <Route path="customerorder" element={<CustomerOrder/>}/>
       <Route path="manageproduct" element={<ManageProduct/>}/>
+      <Route path="profile" element={<Profile/>}/>
       </Route>
      </Routes>
      </BrowserRouter>

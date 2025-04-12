@@ -1,7 +1,10 @@
 #admindashboard{
     padding: 20px;
     text-align: center;
-    background-color: lightcyan;
+    background-color: rgb(56, 55, 53);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
 }
 
 #data1{
@@ -10,6 +13,7 @@
     padding: 20px;
     font-weight: bold;
     font-size: 20px;
+    text-transform: uppercase;
 }
 #data2{
     text-align: right;
