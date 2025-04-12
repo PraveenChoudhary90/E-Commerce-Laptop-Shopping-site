@@ -7,3 +7,13 @@
 }
 
 
+/* tablet view */
+@media screen and (max-width:768px) { 
+    #profile{
+ padding-bottom: 900px;
+ height: 100vh;
+ /* overflow-y: scroll; */
+ color: blue;
+ width: 600px;
+}
+}

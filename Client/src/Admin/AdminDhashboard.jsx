@@ -35,7 +35,6 @@ const Dashboard = ()=>{
         </div>
         <div id="navdata1">
           <Outlet/>
-          {/* <h1>data</h1> */}
         </div>
         </div>
 

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import BASE_URL from '../Config/Config';
 import { ToastContainer, toast } from "react-toastify";
+import "../css/AddProduct.css";
 
 const AddProduct=()=>{
      const [input, setInput] = useState({});
@@ -50,7 +51,7 @@ const AddProduct=()=>{
 
     return(
         <>
-          <Form>
+          <Form id='addproduct'>
       <Form.Group className="mb-3" controlId="formBasicEmaila">
         <Form.Label>Product name</Form.Label>
         <Form.Control type="text"  name="name" onChange={handleInput} />

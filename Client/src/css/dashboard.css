@@ -64,7 +64,7 @@
     #admindashboard{
     padding: 20px;
     text-align: center;
-    background-color: lightcyan;
+    background-color: rgb(31, 32, 32);
 }
 
 #data1{
@@ -81,20 +81,23 @@
 }
 
 #nav{
-    display: flex;
-    justify-content: center; 
-       align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: space-evenly; 
+    align-items: center;
+    text-align: center; */
     background-color: lightgray;
+
 }
 
 #navdata{
     display: flex;
     background-color: rgb(33, 206, 212);
-    justify-content: center;
-    align-items: start;
+    justify-content: space-around;
+    align-items: center;
     gap: 20px;
-    width: 400px;
-    padding-left: 40px;
+    width: 100px;
+    padding-left: 190px;
     padding-top: 30px;
     margin-bottom: 630px;
     height: 100vh;
@@ -103,12 +106,13 @@
 }
 #navdata Button{
     width: 160px;
+    margin-right: 190px;
 }
 
 #navdata1{
-   margin-right: 100px;
+   margin-right: 300px;
    margin-left: 160px;
-   width: 50%;
+   width: 60%;
    padding: 30px;
    padding-bottom: 170px;
    box-shadow: 0px 0px 9px;
@@ -124,9 +128,12 @@
     #admindashboard{
     padding: 20px;
     text-align: center;
-    background-color: lightcyan;
+    background-color: rgb(10, 34, 34);
+    
 }
-
+#admindashboard h1{
+    font-size: 20px;
+}
 #data1{
     text-align: center;
     background-color: lightskyblue;
