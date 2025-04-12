@@ -29,7 +29,7 @@
 }
 
 #navdata{
-    display: flex;
+    display: flex; 
     flex-direction: column;
     background-color: rgb(33, 206, 212);
     justify-content: start;

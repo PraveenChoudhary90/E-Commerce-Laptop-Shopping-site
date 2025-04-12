@@ -77,6 +77,26 @@ const DeleteDataProduct = async(req,res)=>{
 }
 
 
+const ShowFromData = async(req,res)=>{
+    const { _id }=req.body;
+    try {
+        const Data =await ProductModel.findById(_id);
+        res.status(200).send(Data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+const UpdataData = async(req,res)=>{
+    const {_id}=req.body;
+    try {
+        const Data = await ProductModel.findByIdAndUpdate(_id, req.body);
+        res.status(200).send({msg:"Your Product Data is Update successfully"});
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 module.exports = {
@@ -85,4 +105,6 @@ module.exports = {
     ShowProduct,
     GetCustomerOrder,
     DeleteDataProduct,
+    ShowFromData,
+    UpdataData
 }

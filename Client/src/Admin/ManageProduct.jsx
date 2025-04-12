@@ -15,7 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 const ManageProduct = ()=>{
       const [mydata, setMydata] = useState([]);
       const [input, setInput] = useState({});
-      const [images,setImages]=useState("");
+      // const [images,setImages]=useState("");
       
 
        const [show, setShow] = useState(false);
@@ -24,10 +24,7 @@ const ManageProduct = ()=>{
   const handleShow = () => setShow(true);
 
 
-  const Handelupdate = (_id)=>{
-        handleShow(true);
-        console.log(_id);
-  }
+ 
 
       const loadData = async()=>{
   const api = `${BASE_URL}/admin/showProduct`;
@@ -61,6 +58,20 @@ const HandelDelete =async (id)=>{
     }
 }
 
+
+ const Handelupdate = async(_id)=>{
+        handleShow(true);
+        console.log(_id);
+        const api = `${BASE_URL}/admin/ShowFromData`;
+        try {
+          const response = await axios.post(api, {_id:_id});
+          console.log(response.data);
+          setInput(response.data);
+        } catch (error) {
+          console.log(error);
+        }
+  }
+
 const handleInput = (e)=>{
   const name = e.target.name;
   const value = e.target.value;
@@ -69,19 +80,20 @@ const handleInput = (e)=>{
 
 }
 console.log(input);
-const handleImage = (e)=>{
-  const files = e.target.files;
-  setImages(files);
-  console.log(images);
+// const handleImage = (e)=>{
+//   const files = e.target.files;
+//   setImages(files);
+//   console.log(images);
 
-}
+// }
 
 const handleupdateSubmit =async (e)=>{
   e.preventDefault();
   const api = `${BASE_URL}/admin/UpdateData`;
   try {
-    const response =await axios.post(api, input, images);
+    const response =await axios.post(api, input);
     toast.success(response.data.msg);
+    setShow(false);
   } catch (error) {
     console.log(error);
   }
@@ -204,10 +216,10 @@ const ans = mydata.map((key)=>{
                     <Form.Control type="text" name="harddisk" value={input.harddisk} onChange={handleInput}  />
                   </Form.Group>
                  
-                  <Form.Group className="mb-3" controlId="formBasicEmailm">
+                  {/* <Form.Group className="mb-3" controlId="formBasicEmailm">
                     <Form.Label>Upload Image</Form.Label>
                     <Form.Control type="file"  multiple  onChange={handleImage}  />
-                  </Form.Group>
+                  </Form.Group> */}
                   <Button variant="primary" type="submit" onClick={handleupdateSubmit}>
                     Update Data
                   </Button>

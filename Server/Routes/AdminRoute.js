@@ -46,6 +46,8 @@ route.post("/addproduct", upload.array('image', 10), AdminController.Addproduct)
 route.get("/showProduct", AdminController.ShowProduct);
 route.get("/getcustomerorder", AdminController.GetCustomerOrder);
 route.post("/DeleteData", AdminController.DeleteDataProduct);
+route.post("/ShowFromData", AdminController.ShowFromData);
+route.post("/UpdateData", AdminController.UpdataData);
 
 
 

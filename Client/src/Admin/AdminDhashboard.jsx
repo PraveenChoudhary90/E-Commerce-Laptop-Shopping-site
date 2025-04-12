@@ -12,7 +12,7 @@ const Dashboard = ()=>{
     return(
         <>
         <div id="admindashboard">
-          <marquee behavior="scroll" direction="left">
+          <marquee behavior="alternate" direction="left">
         <h1>Welcome to Admin Dashboard</h1>
         </marquee>
         </div>
