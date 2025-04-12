@@ -148,9 +148,8 @@
 }
 
 #nav{
-    display: flex;
-    justify-content: center; 
-       align-items: center;
+   display: grid;
+   grid-template-columns: 1fr;
     background-color: lightgray;
 }
 
@@ -160,8 +159,8 @@
     justify-content: center;
     align-items: start;
     gap: 20px;
-    width: 600px;
-    padding-left: 40px;
+    width: 400px;
+    padding-left: 20px;
     padding-top: 30px;
     margin-bottom: 820px;
     height: 100vh;
@@ -169,15 +168,16 @@
 
 }
 #navdata Button{
-    width: 110px;
+    width: 200px;
+    margin: auto;
 }
 
 #navdata1{
-   margin-right: 50px;
-   margin-left: 50px;
-   width: 500px;
-   padding: 30px;
-   padding-bottom: 260px;
+   margin-right: 90px;
+   /* margin-left: 50px; */
+   width: auto;
+   padding: 10px;
+   margin-bottom: 600px;
    box-shadow: 0px 0px 9px;
    
 }

@@ -39,3 +39,19 @@
    
 }
 
+
+/* mobile view */
+@media screen and (max-width:425px) {
+   #manag{
+   height: 100vh;
+   overflow-y: scroll;
+   margin-bottom: 550px;
+   overflow-x: scroll;
+   width: 300px;
+}
+
+
+   
+}
+
+
