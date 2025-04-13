@@ -9,11 +9,12 @@ const TopNav = ()=>{
         <div id="top">
           <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand as={Link}  to="home">PhonoLappyZone</Navbar.Brand>
+          <Navbar.Brand as={Link}  to="home">Phono</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link  as={Link} to="home">Home</Nav.Link>
             <Nav.Link  as={Link}  to="about">About Us</Nav.Link>
-            <Nav.Link  as={Link}   to="Registration">Registration</Nav.Link>
+            <Nav.Link  as={Link}  to="Registration">Registration</Nav.Link>
+            <Nav.Link  as={Link}  to="search">Search</Nav.Link>
           </Nav>
         </Container>
         <Container>

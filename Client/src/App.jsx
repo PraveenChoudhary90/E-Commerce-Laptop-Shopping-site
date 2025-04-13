@@ -13,6 +13,7 @@ import CheckOut from "./Pages/CheckOut"
 import CustomerOrder from "./Admin/CustomerOrder"
 import ManageProduct from "./Admin/ManageProduct"
 import Profile from "./Admin/Profile"
+import SearchProduct from "./Pages/SearchProduct"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="registration" element={<Registration/>}/>
       <Route path="cartdata" element={<CartData/>}/>
       <Route path="checkout" element={<CheckOut/>}/>
+      <Route path="search" element={<SearchProduct/>}/>
       </Route>
      </Routes>
      <Routes>
