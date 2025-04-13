@@ -104,7 +104,7 @@ useEffect(()=>{
         order_id: data.id,
         handler: async (response) => {
           try {
-            const verifyURL = "https://localhost:8000/api/payment/verify";
+            const verifyURL = "https://e-commerce-laptop-shopping-site.onrender.com/api/payment/verify";
             const {data} = await axios.post(verifyURL,response);
           } catch(error) {
             console.log(error);
@@ -123,7 +123,7 @@ useEffect(()=>{
 
     const handlePay = async () => {
       try {
-        const orderURL = "http://localhost:8000/api/payment/orders";
+        const orderURL = "https://e-commerce-laptop-shopping-site.onrender.com/api/payment/orders";
         const {data} = await axios.post(orderURL,{amount: totalAmount, customername:cusData.name, address:cusData.address, contact:cusData.contact, email:cusData.email, proname:productsName});
         console.log(data);
         initPay(data.data);
