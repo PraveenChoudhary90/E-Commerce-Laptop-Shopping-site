@@ -1,6 +1,7 @@
 const CustomerModel = require("../Model/CustomerModel");
 const bcrypt = require('bcrypt');
 const jwt =require("jsonwebtoken");
+const ProductModel = require("../Model/ProductModel");
 
 const CustomerRegistraction = async(req,res)=>{
    const {name,address,city,contact,email,password} =req.body;
@@ -86,10 +87,34 @@ const cusGetData = async(req,res)=>{
 }
 
     
-const SearchProductData = async(req,res)=>{
-    console.log(req.body);
-    res.send("okkk");
-}
+const SearchProductData = async (req, res) => {
+  const { name, brand } = req.body;
+
+  try {
+    // Build dynamic query based on provided fields
+    const query = {};
+    if (name) query.name = name;
+    if (brand) query.brand = brand;
+
+    // Use $or only if both name and brand are provided
+    const searchQuery = (name && brand)
+      ? { $or: [{ name }, { brand }] }
+      : query;
+
+    const data = await ProductModel.find(searchQuery);
+
+    if (data.length === 0) {
+      return res.status(404).send({ msg: "No matching products found." });
+    }
+
+    // console.log(data);
+    res.status(200).send(data);
+  } catch (error) {
+    console.error("Search error:", error);
+    res.status(500).send({ msg: "Server error occurred." });
+  }
+};
+
 
 
 
