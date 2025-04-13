@@ -80,6 +80,7 @@ const [shoe,setShoe] = useState({
 useEffect(()=>{
   if (!localStorage.getItem("userLogedin"))
   {
+    alert("Please Login Frist")
      navigate("/");
   }
   loadData();
