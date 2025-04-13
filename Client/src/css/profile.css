@@ -22,7 +22,7 @@
 /* mobile view */
 @media screen and (max-width:425px) { 
     #profile{
- padding-bottom: 100px;
+ padding-bottom: 890px;
  height: 300px;
  /* overflow-y: scroll; */
  color: blue;
@@ -30,7 +30,7 @@
  
 }
 #profile h4{
-    font-size: 12px;
+    font-size: 8px;
  
    
 

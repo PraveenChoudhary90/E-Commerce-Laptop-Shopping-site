@@ -21,7 +21,7 @@
 @media screen  and (max-width:425px){
     #table1{
     padding-bottom: 110px;
-    width: 300px;
+    width: 200px;
     overflow-x: scroll;
     /* height: auto; */
 }
