@@ -14,7 +14,7 @@ const TopNav = ()=>{
             <Nav.Link  as={Link} to="home">Home</Nav.Link>
             <Nav.Link  as={Link}  to="about">About Us</Nav.Link>
             <Nav.Link  as={Link}  to="Registration">Registration</Nav.Link>
-            <Nav.Link  as={Link}  to="search">Search</Nav.Link>
+            <Nav.Link  as={Link}  to="search">SearchPro</Nav.Link>
           </Nav>
         </Container>
         <Container>
