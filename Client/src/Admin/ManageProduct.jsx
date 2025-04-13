@@ -110,9 +110,9 @@ const ans = mydata.map((key)=>{
            <th>{key.description}</th>
            <th>{key.brand}</th>
            <th>{key.model}</th>
-           <th>{key.size}</th>
-           <th>{key.model}</th>
+           {/* <th>{key.model}</th> */}
            <th>{key.system}</th>
+           <th>{key.size}</th>
            <th>{key.ram}</th>
            <th>{key.harddisk}</th>
            <th style={{color:"red"}}>{key.price}</th>
@@ -135,15 +135,15 @@ const ans = mydata.map((key)=>{
         <tr>
           <th>Cart Pic</th>
           <th>Product Name</th>
+          <th>Description</th>
           <th>Brand</th>
           <th>Product Model</th>
           <th>System</th>
-          <th>Ram</th>
           <th>Screen Size</th>
+          <th>Ram</th>
           <th>Harddisk</th>
-          <th>Description</th>
           <th>Price</th>
-          <th>Quantity</th>
+          {/* <th>Quantity</th> */}
           <th>Delete</th>
           <th>Update</th>
         </tr>

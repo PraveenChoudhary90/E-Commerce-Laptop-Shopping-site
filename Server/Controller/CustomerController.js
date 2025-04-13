@@ -86,7 +86,10 @@ const cusGetData = async(req,res)=>{
 }
 
     
-
+const SearchProductData = async(req,res)=>{
+    console.log(req.body);
+    res.send("okkk");
+}
 
 
 
@@ -95,6 +98,7 @@ module.exports = {
     CustomerRegistraction,
     CustomerLogin,
     custAuth,
-    cusGetData
+    cusGetData,
+    SearchProductData
 
 }

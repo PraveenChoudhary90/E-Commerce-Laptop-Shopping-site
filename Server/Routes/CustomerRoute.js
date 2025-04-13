@@ -7,6 +7,7 @@ route.post("/registration", CustomerController.CustomerRegistraction);
 route.post("/CustomerLogin", CustomerController.CustomerLogin);
 route.get("/userauthenticate", CustomerController.custAuth);
 route.get("/getdata", CustomerController.cusGetData);
+route.post("/searchProduct", CustomerController.SearchProductData);
 
 
 

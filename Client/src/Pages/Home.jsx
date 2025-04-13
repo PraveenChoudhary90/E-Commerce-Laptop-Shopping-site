@@ -87,7 +87,7 @@ const ans = mydata.map((key)=>{
         <Card.Text>
            <h6>{key.description}</h6>
            <h6>Brand : {key.brand}</h6>
-           <h6>Model{key.model}</h6>
+           {/* <h6>Model{key.model}</h6> */}
            <h6>Size:{key.size}</h6>
            <h6>Model:{key.model}</h6>
            <h6>System:{key.system}</h6>
